@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-require_once 'JobResultInterface.php';
-require_once 'JobBase.php';
-
 class MicroBatcher
 {
     /**
@@ -18,11 +15,10 @@ class MicroBatcher
     }
 
     /**
-     * @param JobBase $job
+     * @param Job $job
      *
-     * @return JobResultInterface
      */
-    public function acceptJob(JobBase $job): JobResultInterface
+    public function acceptJob(Job $job)
     {
         // save job
     }
