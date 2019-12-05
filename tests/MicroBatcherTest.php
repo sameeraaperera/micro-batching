@@ -23,7 +23,7 @@ final class MicroBatcherTest extends TestCase
         parent::tearDown();
     }
 
-    public function testCanAcceptJob()
+    public function testCanAcceptJob(): void
     {
         $microBatcher = new MicroBatcher(1, 1);
         $job = (new JobFactory())->createJobFromMetadata('sample');
@@ -34,7 +34,7 @@ final class MicroBatcherTest extends TestCase
         $this->assertSame(1, $job->batchId);
     }
 
-    public function testDoesIncrementBatchIdWhenBatchSizeReached()
+    public function testDoesIncrementBatchIdWhenBatchSizeReached(): void
     {
         $microBatcher = new MicroBatcher(2, 1);
         $job1 = (new JobFactory())->createJobFromMetadata('sample');
@@ -50,7 +50,7 @@ final class MicroBatcherTest extends TestCase
         $this->assertSame(2, $job3->batchId);
     }
 
-    public function testDoesIncrementBatchIdWhenTimeLimitReached()
+    public function testDoesIncrementBatchIdWhenTimeLimitReached(): void
     {
         $microBatcher = new MicroBatcher(5, 2);
         $job1 = (new JobFactory())->createJobFromMetadata('sample');

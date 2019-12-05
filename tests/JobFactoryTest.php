@@ -23,7 +23,7 @@ final class JobFactoryTest extends TestCase
         parent::tearDown();
     }
 
-    public function testCanCreateJob()
+    public function testCanCreateJob(): void
     {
         $metadata = 'some data';
         $jobFactory = new JobFactory();

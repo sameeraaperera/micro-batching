@@ -14,7 +14,7 @@ final class MicroBatcher
     /**
      * Maximum time period in seconds between the 1st and the last job in a micro batch
      *
-     * @var inta
+     * @var int
      */
     private $batchTime;
 
