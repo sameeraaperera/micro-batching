@@ -7,22 +7,27 @@ class Job
     /**
      * @var int
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      */
-    private $metadata;
+    public $metadata;
 
     /**
      * @var string
      */
-    private $status;
+    public $status;
 
     /**
      * @var int
      */
-    private $timeStamp;
+    public $timeStamp;
+
+    /**
+     * @var int
+     */
+    public $batchId;
 
     /**
      * Job constructor.
@@ -32,33 +37,5 @@ class Job
     public function __construct(string $metadata)
     {
         $this->metadata = $metadata;
-        $this->timeStamp = time();
-    }
-
-    /**
-     * Reteive stored metadata for a job
-     *
-     * @return string
-     */
-    public function getMetadata(): string
-    {
-        return  $this->metadata;
-    }
-
-    /**
-     *
-     * @return string
-     */
-    public function getStatus(): string
-    {
-        return  $this->status;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTimeStamp(): int
-    {
-        return  $this->timeStamp;
     }
 }
