@@ -2,9 +2,20 @@
 
 declare(strict_types=1);
 
-require_once 'JobResultInterface.php';
-
-class JobResult implements JobResultInterface
+class JobResult
 {
+    /**
+     * @var int
+     */
+    public $batchId;
 
+    /**
+     * JobResult constructor.
+     *
+     * @param int $batchId
+     */
+    public function __construct(int $batchId)
+    {
+        $this->batchId = $batchId;
+    }
 }
