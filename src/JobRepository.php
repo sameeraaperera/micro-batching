@@ -11,13 +11,15 @@ final class JobRepository
 
     public function __construct()
     {
-        $this->db = new SQLite3('../db/batch_queue.db');
+        $this->db = new SQLite3($GLOBALS['_DB_PATH']);
     }
 
     /**
      * Insert new job into Table
      *
      * @param Job $job
+     *
+     * @return int
      */
     public function insertJob(Job $job): int
     {
@@ -27,21 +29,6 @@ final class JobRepository
         $stm->execute();
 
         return $this->db->lastInsertRowID();
-    }
-
-    /**
-     * @return array
-     */
-    public function fetchAllPendingJobs(): array
-    {
-        $res = $this->db->query("SELECT * FROM jobs WHERE status='pending' ORDER BY timestamp");
-        $results = [];
-        $jobFactory = new JobFactory();
-        while ($row = $res->fetchArray()) {
-            $results[] = $jobFactory->createFromDataBaseRow($row);
-        }
-
-        return $results;
     }
 
     public function getLastBatchId(int $jobId): int
