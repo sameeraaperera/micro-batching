@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class JobFactory
+final class JobFactory
 {
     /**
      * @param string $metadata

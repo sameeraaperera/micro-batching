@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class MicroBatcher
+final class MicroBatcher
 {
     /**
      * Maximum size of a micro batch

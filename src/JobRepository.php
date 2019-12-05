@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class JobRepository
+final class JobRepository
 {
     /**
      * @var SQLite3
