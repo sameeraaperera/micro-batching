@@ -3,7 +3,7 @@
 require_once '../bootstrap.php';
 
 $jobFactory = new JobFactory();
-$db = new SQLite3('../batch_queue.db');
+$db = new SQLite3('../db/batch_queue.db');
 $res = $db->query('SELECT * FROM jobs');
 //$res = $db->exec('delete FROM jobs');
 

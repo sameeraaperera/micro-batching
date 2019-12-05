@@ -11,7 +11,7 @@ final class JobRepository
 
     public function __construct()
     {
-        $this->db = new SQLite3('../batch_queue.db');
+        $this->db = new SQLite3('../db/batch_queue.db');
     }
 
     /**
